@@ -9,21 +9,33 @@
   <script type="text/javascript" src="https://cdnjs.cloudflare.com/ajax/libs/angular.js/1.5.5/angular-route.js"></script>
   <!-- load jQuery (for Bootstrap) -->
   <script src="https://ajax.googleapis.com/ajax/libs/jquery/2.2.0/jquery.min.js"></script>
-  
-  <!-- Latest compiled and minified CSS -->
-  <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.6/css/bootstrap.min.css" integrity="sha384-1q8mTJOASx8j1Au+a5WDVnPi2lkFfwwEAa8hDDdjZlpLegxhjVME1fgjWPGmkzs7" crossorigin="anonymous">
-  
-  <!-- Optional theme -->
-  <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.6/css/bootstrap-theme.min.css" integrity="sha384-fLW2N01lMqjakBkx3l/M9EahuwpSfeNvV63J5ezn3uZzapT0u7EYsXMjQV+0En5r" crossorigin="anonymous">
-  
-  <!-- Latest compiled and minified JavaScript -->
-  <script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.6/js/bootstrap.min.js" integrity="sha384-0mSbJDEHialfmuBBQP6A4Qrprq5OVfW37PRR3j5ELqxss1yVqOtnepnHVP9aJ7xS" crossorigin="anonymous"></script>
   <script src="./js/app.js"></script>
-  <script src="./js/controllers.js"></script>
-  <script src="./css/app.css"></script>
+  <script src="./js/controllers.js"></script> 
+  <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.6/css/bootstrap.min.css" integrity="sha384-1q8mTJOASx8j1Au+a5WDVnPi2lkFfwwEAa8hDDdjZlpLegxhjVME1fgjWPGmkzs7" crossorigin="anonymous">
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/bootswatch/3.3.6/slate/bootstrap.min.css">
+  <link rel="stylesheet" href="./css/app.css">
   <base href="/">
 </head>
 <body>
+<!-- Search Box -->
+  <div class="container-fluid">
+    <div class="row">
+        <div class="col-md-6 col-md-offset-3">
+          <div class="searchBox">
+            <h1>OMDB Movie Search App</h1>
+            <h3>Enter a movie by title</h3>
+            <form name="searchForm" >
+              <div class="form-group">
+                <input class="form-control" type="text" placeholder="e.g. 'Jaws' or 'Ghostbusters'">
+              </div>
+              <button type="submit" class="btn btn-success"> Search <span class="glyphicon glyphicon-search"></span></button>
+            </form>
+          </div>
+        </div>
+    </div>
+  </div>
+  <hr>
+<!-- Search Results -->
   
 </body>
 </html>
