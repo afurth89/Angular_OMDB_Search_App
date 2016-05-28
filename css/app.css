@@ -7,3 +7,10 @@
 hr {
   border-color: red;
 }
+
+.searchResultMovie {
+  display: inline-block;
+  width: 50%;
+  border: 1px solid red;
+  border-radius: 5px;
+}

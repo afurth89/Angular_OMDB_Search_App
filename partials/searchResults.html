@@ -3,9 +3,11 @@
     <h3>{{view.searchResults.totalResults}} results for '{{view.queryString}}'</h3>
   </div>
   <div class="panel-body" ng-controller="SearchResultsController">
-    <ul ng-repeat="movie in view.searchResults.Search">
+    <ul ng-repeat="movie in view.searchResults.Search" class="searchResultMovie">
       <li><a href="/displayMovie" ng-click="displayMovie(movie.imdbID)">{{movie.Title}}</a></li>
       <li>{{movie.Year}}</li>
+      <li>{{movie.Plot}}</li>
+
     </ul>
   </div>
 </div>
