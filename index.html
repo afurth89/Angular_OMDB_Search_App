@@ -16,7 +16,7 @@
   <link rel="stylesheet" href="./css/app.css">
   <base href="/">
 </head>
-<body>
+<body ng-controller="MainController">
 <!-- Search Box -->
   <div class="container-fluid">
     <div class="row">
@@ -24,9 +24,9 @@
           <div class="searchBox">
             <h1>OMDB Movie Search App</h1>
             <h3>Enter a movie by title</h3>
-            <form name="searchForm" >
+            <form name="searchForm" ng-submit=searchMovies()>
               <div class="form-group">
-                <input class="form-control" type="text" placeholder="e.g. 'Jaws' or 'Ghostbusters'">
+                <input class="form-control" type="text" placeholder="e.g. 'Jaws' or 'Ghostbusters'" ng-model="view.searchText">
               </div>
               <button type="submit" class="btn btn-success"> Search <span class="glyphicon glyphicon-search"></span></button>
             </form>
@@ -36,6 +36,6 @@
   </div>
   <hr>
 <!-- Search Results -->
-  
+  <div class="container" ng-view></div>
 </body>
 </html>
