@@ -6,5 +6,8 @@ app.config(function($routeProvider, $locationProvider) {
       templateUrl: '../partials/searchResults.html',
       controller: 'SearchResultsController'
     })
+    .when('/displayMovie', {
+      templateUrl: '../partials/displayMovie.html'
+    })
   $locationProvider.html5Mode(true);
 });

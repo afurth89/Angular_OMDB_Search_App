@@ -14,5 +14,10 @@ app.controller("MainController", function($scope, $http, $location) {
 })
 
 app.controller("SearchResultsController", function($rootScope, $scope, $http) {
-
+  $scope.displayMovie = function(id) {
+    $http.get('http://www.omdbapi.com/?i='+id+'&plot=short&r=json').then(function(res) {
+      console.log(res);
+      $scope.view.movieToDisplay = res.data;
+    })
+  }
 })
