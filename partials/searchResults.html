@@ -1,5 +1,11 @@
 <div class="panel panel-default">
   <div class="panel-heading">
-    <h3>Search Results for '{{view.queryString}}'</h3>
+    <h3>{{view.searchResults.totalResults}} results for '{{view.queryString}}'</h3>
+  </div>
+  <div class="panel-body" ng-controller="SearchResultsController">
+    <ul ng-repeat="movie in view.searchResults.Search">
+      <li><a href="/displayMovie" ng-click="displayMovie(movie.imdbID)">{{movie.Title}}</a></li>
+      <li>{{movie.Year}}</li>
+    </ul>
   </div>
 </div>
