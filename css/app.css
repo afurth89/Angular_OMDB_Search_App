@@ -8,9 +8,19 @@ hr {
   border-color: red;
 }
 
+h4 {
+  margin-bottom: 0px;
+}
+
+.searchResultPanel {
+  padding: 15px 45px;
+  margin-left: 110px;
+}
+
 .searchResultMovie {
   display: inline-block;
-  width: 50%;
+  width: 40%;
   border: 1px solid red;
   border-radius: 5px;
+  margin: 2px 10px;
 }
