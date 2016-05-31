@@ -1,9 +1,9 @@
 <div class="panel panel-default">
   <div class="panel-heading">
-    <h3>{{view.searchResults.totalResults}} results for '{{view.queryString}}'</h3>
+    <h3>{{view.query.searchResults.totalResults}} results for '{{view.query.text}}' ({{view.query.contentTypeDisplay}})</h3>
   </div>
   <div class="panel-body searchResultPanel" ng-controller="SearchResultsController">
-    <ul ng-repeat="movie in view.searchResults.Search" class="searchResultMovie">
+    <ul ng-repeat="movie in view.query.searchResults.Search" class="searchResultMovie">
       <li><a ng-click="displayMovie(movie.imdbID)"><h4>{{movie.Title}}</h4></a></li>
       <li>{{movie.Year}}</li>
     </ul>

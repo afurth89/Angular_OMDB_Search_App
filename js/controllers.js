@@ -1,15 +1,26 @@
 app.controller("MainController", function($scope, $http, $location, $routeParams) {
   $scope.view = {};
+  $scope.view.contentType = "movie";
+  $scope.view.contentTypeDisplay = "Movie Title";
+  $scope.setContentType = function(forURL, forDisplay) {
+    $scope.view.contentType = forURL;
+    $scope.view.contentTypeDisplay = forDisplay;
+  }
   $scope.searchMovies = function() {
-    $http.get('http://www.omdbapi.com/?s='+$scope.view.searchText+'&type=movie&page=1&r=json').then(function(res) {
+    $http.get('http://www.omdbapi.com/?s='+$scope.view.searchText+'&type='+$scope.view.contentType+'&page=1&r=json').then(function(res) {
       // Cpature previous query string (sets up to clear search bar)
-      $scope.view.queryString = $scope.view.searchText;
-      $scope.view.searchResults = res.data;
+      $scope.view.query = {
+        text: $scope.view.searchText,
+        contentType: $scope.view.contentType,
+        contentTypeDisplay: $scope.view.contentTypeDisplay
+      };
+      $scope.view.query.searchResults = res.data;
+      console.log($scope.view.query)
       $scope.view.searchText = "";  
       $scope.searchForm.$setPristine();
-      $routeParams.searchText = $scope.view.queryString;
-      $location.path('/searchResults/'+$scope.view.queryString)
-      console.log(res);
+      $routeParams.searchText = $scope.view.query.text;
+      $location.path('/searchResults/'+$routeParams.searchText)
+      // console.log(res);
     })
   }
 })
@@ -24,3 +35,4 @@ app.controller("SearchResultsController", function($rootScope, $scope, $http, $l
     })
   }
 })
+
