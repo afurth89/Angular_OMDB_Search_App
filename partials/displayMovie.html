@@ -14,15 +14,30 @@
       <p><strong class="attrName">Runtime: </strong>{{view.movieToDisplay.Runtime}}</p>
       <p><strong class="attrName">Rated: </strong>{{view.movieToDisplay.Rated}}</p>
       <p><strong class="attrName">Awards: </strong>{{view.movieToDisplay.Awards}}</p>
-      <p><strong class="attrName">Metascore: </strong>
+      <p>
+        <img class="logo" src="http://www.metacritic.com/images/layout/mc_logo_inverted.png" alt="Metacritic logo" height="42" width="100">
         <div class="progress">
           <div class="progress-bar" role="progressbar" aria-valuenow="{{view.movieToDisplay.Metascore}}" aria-valuemin="0" aria-valuemax="100" style="width: {{view.movieToDisplay.Metascore}}%;">
             {{view.movieToDisplay.Metascore}}/100
           </div>
         </div>
       </p>
-      <p><strong class="attrName">IMDB Rating: </strong>{{view.movieToDisplay.imdbRating}}</p>
-
+      <p>
+        <img class="logo" src="http://ia.media-imdb.com/images/M/MV5BNzcxMDg0NjIyNl5BMl5BcG5nXkFtZTgwODUxNTg0MjE@._V1_.png" alt="IMDB logo" height="42" width="100">
+        <div class="progress">
+          <div class="progress-bar" role="progressbar" aria-valuenow="{{view.movieToDisplay.imdbRating}}" aria-valuemin="0" aria-valuemax="10" style="width: {{view.movieToDisplay.imdbRating*10}}%;">
+            {{view.movieToDisplay.imdbRating}}/10
+          </div>
+        </div>
+      </p>
+      <p ng-show="view.movieToDisplay.tomatoMeter">
+        <img class="logo" src="http://d2a5cgar23scu2.cloudfront.net/static/images/logos/rtlogo.png" alt="Rotten Tomatoes logo" height="42" width="100">
+        <div ng-show="view.movieToDisplay.tomatoMeter" class="progress">
+          <div class="progress-bar" role="progressbar" aria-valuenow="{{view.movieToDisplay.tomatoMeter}}" aria-valuemin="0" aria-valuemax="10" style="width: {{view.movieToDisplay.tomatoMeter}}%;">
+            {{view.movieToDisplay.tomatoMeter}}/100
+          </div>
+        </div>
+      </p>
     </div>
   </div>
 </div>

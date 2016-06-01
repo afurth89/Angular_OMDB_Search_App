@@ -1,6 +1,11 @@
 <div class="panel panel-default">
   <div class="panel-heading">
     <h3>{{view.query.searchResults.totalResults}} results for '{{view.query.text}}' ({{view.query.contentTypeDisplay}})</h3>
+    <div class="input-group">
+      <span class="input-group-addon">
+        <input type="checkbox" aria-label="..." ng-model="view.rotTom"> Include data from Rotten Tomatoes
+      </span>
+    </div>
   </div>
   <div class="panel-body searchResultPanel" ng-controller="SearchResultsController">
     <ul ng-repeat="movie in view.query.searchResults.Search" class="searchResultMovie">

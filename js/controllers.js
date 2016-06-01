@@ -2,6 +2,7 @@ app.controller("MainController", function($scope, $http, $location, $routeParams
   $scope.view = {};
   $scope.view.contentType = "movie";
   $scope.view.contentTypeDisplay = "Movie Title";
+  $scope.view.rotTom = true;
   $scope.setContentType = function(forURL, forDisplay) {
     $scope.view.contentType = forURL;
     $scope.view.contentTypeDisplay = forDisplay;
@@ -27,7 +28,7 @@ app.controller("MainController", function($scope, $http, $location, $routeParams
 
 app.controller("SearchResultsController", function($rootScope, $scope, $http, $location, $routeParams) {
   $scope.displayMovie = function(id) {
-    $http.get('http://www.omdbapi.com/?i='+id+'&plot=long&r=json').then(function(res) {
+    $http.get('http://www.omdbapi.com/?i='+id+'&plot=long&r=json&tomatoes='+$scope.view.rotTom).then(function(res) {
       console.log(res);
       $scope.view.movieToDisplay = res.data;
       $routeParams.movieID = id;
