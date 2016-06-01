@@ -14,7 +14,13 @@
       <p><strong class="attrName">Runtime: </strong>{{view.movieToDisplay.Runtime}}</p>
       <p><strong class="attrName">Rated: </strong>{{view.movieToDisplay.Rated}}</p>
       <p><strong class="attrName">Awards: </strong>{{view.movieToDisplay.Awards}}</p>
-      <p><strong class="attrName">Metascore: </strong>{{view.movieToDisplay.Metascore}}</p>
+      <p><strong class="attrName">Metascore: </strong>
+        <div class="progress">
+          <div class="progress-bar" role="progressbar" aria-valuenow="{{view.movieToDisplay.Metascore}}" aria-valuemin="0" aria-valuemax="100" style="width: {{view.movieToDisplay.Metascore}}%;">
+            {{view.movieToDisplay.Metascore}}/100
+          </div>
+        </div>
+      </p>
       <p><strong class="attrName">IMDB Rating: </strong>{{view.movieToDisplay.imdbRating}}</p>
 
     </div>
